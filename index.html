@@ -1,8 +1,59 @@
+<!Doctype: HTML w/ Processing>
+
 <html>
+
   <head>
-    <title> Zebrez </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Processing Demo</title>
+      <script type="text/javascript" src="js/processing.js"></script>
   </head>
+  
   <body>
-    <h1> Click to play Flappy Bird!!!</h1>
+    <h1>Click to play Flappy Bird!!</h1>
+    <p>:P</p>
+    
+    <script type="text/processing">
+    
+    float x; //declare variables
+float y;
+float Vx;
+float Vy;
+PImage img;
+PImage bg;
+int yy;
+
+void setup() {
+  size(605, 400);
+  bg = loadImage("leaves.PNG");
+  img = loadImage("Butterfly.PNG.png");
+   x = random(width);
+   y = random(height); 
+   Vx = random(-5, 5);
+   Vy = random(-5, 5);
+}
+
+void draw(){
+  background(bg);
+  yy++;
+  if(yy > height){
+    yy = 0;
+  }
+  image(img, x, y);
+  img.resize(60,60);
+  x += Vx;
+  y += Vy;
+    //bounce off walls
+    if (x > width || x < 0){
+      Vx *= -1;
+    }
+    if(y > height || y < 0){
+      Vy *= -1;
+    }
+}
+
+    </script>
+    <canvas id="sketch" style="border: 1px solid black;"></canvas>
+    
   </body>
+  
 </html>
