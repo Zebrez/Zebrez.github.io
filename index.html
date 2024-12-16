@@ -21,14 +21,14 @@
         PImage bg;
         int yy;
           
-        void setup() {
+        void setup(){
           size(605, 400);
           bg = loadImage("leaves.PNG");
           img = loadImage("Butterfly.PNG.png");
-           x = random(width);
-           y = random(height); 
-           Vx = random(-5, 5);
-           Vy = random(-5, 5);
+          x = random(width);
+          y = random(height); 
+          Vx = random(-5, 5);
+          Vy = random(-5, 5);
         }
         
         void draw(){
@@ -41,13 +41,13 @@
           img.resize(60,60);
           x += Vx;
           y += Vy;
-            //bounce off walls
-            if (x > width || x < 0){
-              Vx *= -1;
-            }
-            if(y > height || y < 0){
-              Vy *= -1;
-            }
+          //bounce off walls
+          if (x > width || x < 0){
+            Vx *= -1;
+          }
+          if(y > height || y < 0){
+            Vy *= -1;
+          }
         }
 
     </script>
